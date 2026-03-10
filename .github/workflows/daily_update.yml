@@ -1,0 +1,30 @@
+name: Daily Market Data Pipeline
+
+on:
+  schedule:
+    - cron: '0 22 * * *'  # každý deň o 22:00 UTC
+  workflow_dispatch:  # možnosť spustiť manuálne
+
+jobs:
+  run-pipeline:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout kódu
+        uses: actions/checkout@v3
+
+      - name: Nastav Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Inštaluj knižnice
+        run: |
+          pip install yfinance pandas pandas-gbq google-cloud-bigquery vaderSentiment newsapi-python
+
+      - name: Vytvor GCP kľúč
+        run: |
+          echo '${{ secrets.GCP_SA_KEY }}' > gcp_key.json
+
+      - name: Spusti pipeline
+        run: python pipeline.py
