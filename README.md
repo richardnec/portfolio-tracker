@@ -16,9 +16,9 @@ Automatizovaný systém na sledovanie finančných trhov a sentiment analýzu sp
 AAPL, TSLA, MSFT, BTC-USD, ETH-USD
 
 ## 🔍 Kľúčové zistenia
-- MA50 klesla pod MA200 pre MSFT — bearish signál (death cross)
-- Sentiment správ pre MSFT klesol z +0.1 na -0.1 za posledný týždeň
-- RSI pre väčšinu symbolov osciluje v neutrálnej zóne (40-60)
+- MSFT RSI stúpa od 40 na 60 — mierne bullish
+- MSFT sentiment klesol z +0.1 na -0.1 okolo 8.3
+- Cena stabilná okolo 400
 
 ## 📊 Dashboard
 ![Dashboard](dashboard.png)
