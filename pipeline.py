@@ -29,7 +29,7 @@ def download_prices():
     all_data = []
     for symbol in SYMBOLS:
         ticker = yf.Ticker(symbol)
-        df = ticker.history(period="5d")
+        df = ticker.history(period="1d")
         df["symbol"] = symbol
         df = df.reset_index()
         df = df[["Date", "symbol", "Open", "High", "Low", "Close", "Volume"]]
