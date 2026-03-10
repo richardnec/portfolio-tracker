@@ -80,7 +80,7 @@ def upload_to_bigquery(df, table_name):
     print(f"☁️  Nahrávam {table_name} do BigQuery...")
     client = bigquery.Client()
     table_id = f"{PROJECT_ID}.{DATASET}.{table_name}"
-    job_config = bigquery.LoadJobConfig(write_disposition="WRITE_TRUNCATE")
+    job_config = bigquery.LoadJobConfig(write_disposition="WRITE_APPEND")
     job = client.load_table_from_dataframe(df, table_id, job_config=job_config)
     job.result()
     print(f"✅ Hotovo! Nahraných {len(df)} riadkov do {table_id}")
