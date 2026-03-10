@@ -12,7 +12,7 @@ os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "gcp_key.json"
 # Nastavenia
 PROJECT_ID = "portfolio-tracjer"
 DATASET = "market_data"
-NEWSAPI_KEY = "4fb74e46275f4c6caafa4d51bbe5f467"
+NEWSAPI_KEY = os.environ.get("NEWSAPI_KEY")
 
 # Symboly a ich názvy pre vyhľadávanie správ
 SYMBOLS = ["AAPL", "TSLA", "MSFT", "BTC-USD", "ETH-USD"]
